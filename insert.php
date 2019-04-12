@@ -9,8 +9,8 @@
     $sql="INSERT INTO productos (codigo_prod,nombre_prod,cantidad)VALUES('$codigo','$nombre',$cantidad)";
 
     if ($conn->query($sql)===true) {
-        echo "Producto registrado con exito";
-        echo "<br><a href='index.php'>regresar</a>";
+        echo "<script languaje='javascript'>alert('Producto regisrado con exito')</script>";
+        header("refresh:0; url=index.php");
     }else{
         echo "Error:".$sql."<br>".$conn->error;
     }

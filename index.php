@@ -36,8 +36,32 @@
     </div>
     
 </body>
+<hr>
 </html>
 
 <?php
     include "database.php";
-     ?>
+
+    echo "<table border='1'>
+    <tr><th>Còdigo</th>
+    <th>Nombre</th>
+    <th>Cantidad</th>
+    <th>actividades</th></tr>";
+
+    $sql="SELECT * FROM productos";
+    $result=$conn->query($sql);
+
+    if($result->num_rows > 0){
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr><td>".$row['codigo_prod']."</td>";
+            echo "<td>".$row['nombre_prod']."</td>";
+            echo "<td>".$row['cantidad']."</td>
+            <td><a href='update.php'><img src='icons/edit_icon.png' width='20'></a> 
+            <a href='delete.php'><img src='icons/delecte_icon.png' width='20'></a></td></tr>";
+        }
+    }else{
+        echo "no hay productos registrados";
+    }
+    
+?>
+
