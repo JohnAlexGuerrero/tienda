@@ -21,12 +21,12 @@
       
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       
-        <input class="form-control mr-sm-2" type="text" placeholder="Busca producto por nombre o código">
+        <input class="form-control mr-sm-2" disabled="ok" type="text" placeholder="Busca producto por nombre o código" >
         <ul class="navbar-nav">
-    <li class="nav-item active">
+    <li class="nav-item ">
       <a class="nav-link" href="index.php">Home</a>
     </li>
-    <li class="nav-item ">
+    <li class="nav-item active">
       <a class="nav-link" href="view_create.php">Registro</a>
     </li>
     <li class="nav-item">
@@ -45,49 +45,38 @@
   </header>
 
 
-  <div class="container">
-  <h2>Inventario de productos</h2><br>
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-      <th>Item</th>
-      <th>Código</th>
-            <th>Descripción producto</th>
-            <th>Stock</th>
-            <th>Costo</th>
-            <th></th>
-            <th></th>
-      </tr>
-    </thead>
-    <tbody>
-          <?php
-            include "database.php";
-            $n=1;
-              $sql="SELECT * FROM productos";
-              $result=$conn->query($sql);
-
-              if($result->num_rows > 0){
-                  while ($row = $result->fetch_assoc()) {
-                    echo "<tr><td>".$n."</td>";
-                      echo "<td>".$row['codprod']."</td>";
-                      echo "<td>".$row['nomprod']."</td>";
-                      echo "<td>".$row['cantprod']."</td>";
-                      echo "<td>$".$row['pcosto']."</td>
-                      <td><a href='update.php'><img src='icons/edit_icon.png' width='20'></a> 
-                      <a href='delete.php'><img src='icons/delecte_icon.png' width='20'></a></td></tr>";
-                      $n++;
-                  }
-              }else{
-                  echo "<div class=alert alert-success>
-                  <strong>!no hay productos registrados!.</strong> 
-              </div>";
-              }
-              
-      ?>
-    </tbody>
-  </table>
-
 </body>
+<div class="container">
+  <form action="insert.php" method="post">
+  <div class="form-group">
+    <label for="codigo">Còdigo del Producto:</label>
+    <input type="text" class="form-control" id="cod" maxlenght="8" name="codigo" required>
+  </div>
+  <div class="form-group">
+    <label for="prod">Descripción producto:</label>
+    <input type="text" class="form-control" id="prod" name="producto" maxlenght="60" required>
+  </div>
+  <div class="form-group">
+    <label for="cant">Cantidad:</label>
+    <input type="number" class="form-control" id="cant" name="cantidad" required>
+  </div>
+  <div class="form-group">
+    <label for="pcosto">Costo producto:</label>
+    
+    <input type="text" class="form-control" id="pcosto" name="costo" autocomplete="off" required>
+  </div>
+  <div class="form-group">
+    <label for="foto">Imagen de producto:</label>
+    <input type="file" class="form-control" id="foto" name="foto" value="Examinar" >
+  </div>
+  <button type="submit" class="btn btn-primary">Registrar</button>
+  <button type="reset" class="btn btn-secundary">Cancelar</button>
+</form>
+</div>
+<br>
+<hr>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -95,7 +84,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-
 
