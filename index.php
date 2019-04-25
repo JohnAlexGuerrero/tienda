@@ -20,8 +20,9 @@
       <!-- Nav tabs -->
       
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      
-        <input class="form-control mr-sm-2" type="text" placeholder="Busca producto por nombre o código">
+        <input class="form-control mr-sm-2" name="consulta" id="consult" type="text" placeholder="Busca producto por nombre o código">
+        <a class="btn btn-primary" href="index.php?search">Buscar</a>
+
         <ul class="navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="index.php">Home</a>

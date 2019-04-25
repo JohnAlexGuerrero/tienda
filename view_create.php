@@ -4,9 +4,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <title>Tienda</title>
   </head>
@@ -48,6 +54,7 @@
 </body>
 <div class="container">
   <form action="insert.php" method="post">
+  <h2>Registro de productos</h2>
   <div class="form-group">
     <label for="codigo">Còdigo del Producto:</label>
     <input type="text" class="form-control" id="cod" maxlenght="8" name="codigo" required>
@@ -57,13 +64,14 @@
     <input type="text" class="form-control" id="prod" name="producto" maxlenght="60" required>
   </div>
   <div class="form-group">
-    <label for="cant">Cantidad:</label>
-    <input type="number" class="form-control" id="cant" name="cantidad" required>
+    <label for="cant" class="mr-sm-2">Cantidad:</label>
+    <input type="number" class="form-control mb-2 mr-sm-2" id="cant" name="cantidad" required>
+    
+    <label for="pcosto" class="mr-sm-2">Costo producto:</label>
+    
+    <input type="text" class="form-control mb-2 mr-sm-2" id="pcosto" name="costo" autocomplete="off" required>
   </div>
   <div class="form-group">
-    <label for="pcosto">Costo producto:</label>
-    
-    <input type="text" class="form-control" id="pcosto" name="costo" autocomplete="off" required>
   </div>
   <div class="form-group">
     <label for="foto">Imagen de producto:</label>
