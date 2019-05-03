@@ -12,7 +12,7 @@
 
     if ($conn->query($sql)===true) {
         echo "<script languaje='javascript'>alert('Producto regisrado con exito')</script>";
-        header("refresh:0; url=index.php");
+            
     }else{
         echo "Error:".$sql."<br>".$conn->error;
     }
