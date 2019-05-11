@@ -11,31 +11,45 @@
 </head>
 <body>
 
-<?php
-    
-    if () {
-      # code...
-    }
+<?php  
+
+ 
+    if (empty($_GET['alert'])) {
+
+        echo "";
+   
+   } elseif ($_GET['alert'] == 1) {
+
+        echo "<div class='alert alert-danger alert-dismissable'>
+
+        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+        <h4><i class='icon fa fa-times-circle'></i> Error al entrar!</h4>
+        Usuario o la contraseña es incorrecta, vuelva a verificar su nombre de usuario y contraseña.
+        </div>";
+   }elseif ($_GET['alert'] == 2) {
+
+        echo "<div class='alert alert-success alert-dismissable'>
+        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+        <h4><i class='icon fa fa-check-circle'></i> Exito!!</h4>
+        Has salido con éxito.</div>";
+
+  }
+      
 
 ?>
-
-<div class="container col-sm-8">
+<br>
+<div class="container col-sm-4">
   <h2>Login</h2>
-  <form action="validation_user.php" method="post">
+  <form action="validation-user.php" method="post">
     <div class="form-group">
       <label for="email">Username:</label>
-      <input type="email" class="form-control" id="email" autocompleted="off" placeholder="Enter email" name="email">
+      <input type="email" class="form-control" id="" autocompleted="off" placeholder="Enter email" name="email">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
     </div>
 
-    <div class="form-group form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember"> Remember me
-      </label>
-    </div>
     <button type="submit" class="btn btn-primary">Ingresar</button>
     <br>
     <a href="signup.php">Sign up</a>

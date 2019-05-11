@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container col-sm-6">
   <h2>Sign Up</h2>
   <p>Formulario de registro de usuarios</p>
   <form action="uregister.php" method="post" class="was-validated">
