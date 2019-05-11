@@ -11,6 +11,32 @@
 </head>
 <body>
 
+<?php  
+
+ 
+    if (empty($_GET['alert'])) {
+
+        echo "";
+   
+   } elseif ($_GET['alert'] == 2) {
+
+        echo "<div class='alert alert-danger alert-dismissable'>
+
+        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+        <h4><i class='icon fa fa-times-circle'></i> Error al entrar!</h4>
+        Usuario o la contraseña es incorrecta, vuelva a verificar su nombre de usuario y contraseña.
+        </div>";
+   }elseif ($_GET['alert'] == 1) {
+
+        echo "<div class='alert alert-success alert-dismissable'>
+        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+        <h4><i class='icon fa fa-check-circle'></i> Registrate!!</h4>
+        Usuario no se encuentra registrado.</div>";
+
+  }
+      
+?>
+
 <div class="container col-sm-6">
   <h2>Sign Up</h2>
   <p>Formulario de registro de usuarios</p>
