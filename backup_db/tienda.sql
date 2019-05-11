@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2019 a las 00:33:48
+-- Tiempo de generación: 04-05-2019 a las 02:14:15
 -- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Versión de PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,13 +42,6 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`item`, `codprod`, `nomprod`, `cantprod`, `pcosto`, `imagen`) VALUES
-(1, '10227025', 'ALAMBRE CENTELSA N 12 X 100 M', 10, 95435, ''),
-(2, '10227027', 'ALAMBRE CENTELSA N 10 X 100 M', 4, 151682, ''),
-(3, '10230010', 'CUÃ±ETE PEGANTE AMARILLO AFRICANO', 1, 119770, ''),
-(4, '10230011', 'VARILLA CORRUGADA 9 MM X 6 M', 100, 8600, ''),
-(5, '10230012', 'VARILLA CORRUGADA 8.5 MM X 6 M', 100, 7723, ''),
-(6, '10230013', 'VARILLA CORRUGADA 12 MM X 6 M', 100, 14100, ''),
-(7, '10230014', 'CAL HIDRATADA X 10 KG CALTEK', 15, 7000, ''),
 (8, '10230015', 'VARILLA CORRUGADA 11 MM X 6 M DIACO', 50, 12920, ''),
 (9, '10230016', 'CHIPA 1/4 DIACO', 200, 2750, ''),
 (10, '10230017', 'TEJA PVC ADRI N 8 MARFIL 2.44 M', 20, 27727, ''),
@@ -58,15 +51,27 @@ INSERT INTO `productos` (`item`, `codprod`, `nomprod`, `cantprod`, `pcosto`, `im
 (14, '10230021', 'TEJA AJONIT AJOVER N 8 CRISTAL 2.44 M', 20, 39508, ''),
 (15, '10230022', 'CEMENTO GRIS X 50 KG TEQUENDAMA', 100, 22200, ''),
 (16, '10230023', 'CHIPA 3/8 DIACO', 200, 2750, ''),
-(17, '10230024', 'TEJA TECHOLIT N 12 ETERNIT 3.66 M', 7, 26400, ''),
-(18, '10230025', 'TEJA TECHOLIT N 10 ETERNIT 3.06 M', 20, 22300, ''),
 (19, '10230026', 'TEJA TECHOLIT N 8 ETERNIT 2.44 M', 20, 17850, ''),
-(20, '10230027', 'TEJA RURALITA TRAPEZOIDAL ROJA N 8', 7, 31800, ''),
 (21, '10230028', 'TEJA RURALITA TRAPEZOIDAL ROJA N 10', 9, 39700, ''),
 (22, '10230029', 'TEJA MARCOLITA TIPO ZINC N 12 GERFOR 3.66 M', 12, 38630, ''),
 (23, '10230030', 'TEJA MARCOLITA TIPO ZINC N 10 GERFOR 3.06 M', 10, 33902, ''),
 (24, '10230031', 'TEJA MARCOLITA TIPO ZINC N 8 GERFOR 2.44 M', 9, 25827, ''),
 (25, '10230032', 'ALAMBRE CENTELSA N 14 X 100 M', 6, 73000, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `firstname` varchar(30) COLLATE utf8_bin NOT NULL,
+  `lastname` varchar(30) COLLATE utf8_bin NOT NULL,
+  `email` varchar(50) COLLATE utf8_bin NOT NULL,
+  `password` varchar(50) COLLATE utf8_bin NOT NULL,
+  `photo` varchar(50) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Índices para tablas volcadas
@@ -81,6 +86,12 @@ ALTER TABLE `productos`
   ADD UNIQUE KEY `nomprod` (`nomprod`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -89,6 +100,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `productos`
   MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
