@@ -7,16 +7,30 @@
     $email=$_POST['uemail'];
     $pass_1=$_POST['pswd'];
     $pass_2=$_POST['pswd2'];
-    $user_image="images/user_default.png";
+    $name_photo=$_FILES['photo']['name'];
+    $type_photo=$_FILES['photo']['type'];
+    $size_photo=$_FILES['photo']['size'];
+    
+    move_uploaded_file($_FILES['photo']['tmp_name'],"photos/".$name_photo=$_FILES['photo']['name']);
+
+    $ruta="photos/".$name_photo;
+    /*
+    if (empty($photo)) {
+        $user_image="images/user_default.png";
+    }else {
+        $user_image=$photo;
+    }*/
+    
 
     if (strcmp($pass_1,$pass_2)==0) {
         $pswd=password_hash($_POST['pswd'],PASSWORD_DEFAULT);
 
         $sql_validation ="SELECT * FROM usuarios WHERE email='$email' ";
-    $result=$conn->query($sql_validation);
+        $result=$conn->query($sql_validation);
 
     if ($result->num_rows == 0) {
-        $sql="INSERT INTO usuarios (firstname, lastname, email, password,photo) VALUES('$firstname','$lastname','$email','$pswd','$user_image')";
+        $sql="INSERT INTO usuarios (firstname, lastname, email, password,photo)
+         VALUES('$firstname','$lastname','$email','$pswd','$ruta')";//$user_image
 
         if ($conn->query($sql)===true) {
             echo "<script languaje='javascript'>alert('Usuario regisrado con exito')</script>";

@@ -18,20 +18,22 @@
 
         echo "";
    
-   } elseif ($_GET['alert'] == 1) {
+   }elseif ($_GET['alert'] == 1) {
 
         echo "<div class='alert alert-danger alert-dismissable'>
 
         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
         <h4><i class='icon fa fa-times-circle'></i> Error al entrar!</h4>
-        Usuario o la contraseña es incorrecta, vuelva a verificar su nombre de usuario y contraseña.
+        La contraseña es incorrecta, vuelva a verificar su nombre de usuario y contraseña.
         </div>";
    }elseif ($_GET['alert'] == 2) {
 
-        echo "<div class='alert alert-success alert-dismissable'>
-        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        <h4><i class='icon fa fa-check-circle'></i> Exito!!</h4>
-        Has salido con éxito.</div>";
+    echo "<div class='alert alert-danger alert-dismissable'>
+
+    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+    <h4><i class='icon fa fa-times-circle'></i> Error al entrar!</h4>
+    Datos incorrectos, vuelva a verificar su nombre de usuario y contraseña.
+    </div>";
 
   }
       

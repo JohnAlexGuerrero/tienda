@@ -40,7 +40,7 @@
 <div class="container col-sm-6">
   <h2>Sign Up</h2>
   <p>Formulario de registro de usuarios</p>
-  <form action="uregister.php" method="post" class="was-validated">
+  <form action="uregister.php" method="post" class="was-validated" enctype="multipart/form-data">
     <div class="form-group">
       <label for="uname">Fisrtname:</label>
       <input type="text" class="form-control" id="uname" placeholder="Enter Firstname" name="uname" required>
@@ -71,7 +71,10 @@
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>
-    
+    <div class="form-group">
+      <label for="pwd">Abjuntar foto:</label>
+      <input type="file" class="form-control" id="pwd" placeholder="Enter your photo" name="photo">
+    </div>
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
 </div>
