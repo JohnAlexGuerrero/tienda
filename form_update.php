@@ -1,9 +1,20 @@
 <?php
 
-    $id =$_GET['id'];
-    $cod =$_GET['cod'];
-    $nom =$_GET['nom'];
-    $cant =$_GET['cant'];  
+    include 'database.php';
+
+    $id =$_GET['cod'];
+    
+    $sql="SELECT * FROM productos WHERE codprod='$id'";
+    $result=$conn->query($sql);
+    
+    if ($result->num_rows >0) {
+      while ($row=$result->fetch_assoc()) {
+        $codprod=$row['codprod'];
+        $nomprod=$row['nomprod'];
+        $cantprod=$row['cantprod'];
+        $pcosto=$row['pcosto'];
+      }
+    }
 
 ?>
 
@@ -29,8 +40,8 @@
   <body>
 
       <br>
-      <div class="container">
-  <form action="insert.php" method="post">
+      <div class="container col-sm-4">
+  <form action="update_product.php" method="post" enctype="multipart/form-data">
   <h2>Actualizaciòn de productos</h2>
   <div class="form-group">
     <label for="codigo"></label>
@@ -38,19 +49,19 @@
   </div>
   <div class="form-group">
     <label for="codigo">Còdigo del Producto:</label>
-    <input type="text" class="form-control" id="cod" maxlenght="8" name="codigo" value=<?php echo $cod;?> readonly="yes">
+    <input type="text" class="form-control" id="cod" maxlenght="8" name="codigo" value=<?php echo $codprod;?> readonly="yes">
   </div>
   <div class="form-group">
     <label for="prod">Descripción producto:</label>
-    <input type="text" class="form-control" id="prod" name="producto" maxlenght="60" value=<?php echo $nom;?> readonly="yes">
+    <input type="text" class="form-control" id="prod" name="producto" maxlenght="60" value=<?php echo $nomprod;?> readonly="yes">
   </div>
   <div class="form-group">
     <label for="cant" class="mr-sm-2">Cantidad:</label>
-    <input type="number" class="form-control mb-2 mr-sm-2" id="cant" name="cantidad" value=<?php echo $cant;?> required>
+    <input type="number" class="form-control mb-2 mr-sm-2" id="cant" name="cantidad" value=<?php echo $cantprod;?> required>
     
     <label for="pcosto" class="mr-sm-2">Costo producto:</label>
     
-    <input type="text" class="form-control mb-2 mr-sm-2" id="pcosto" name="costo" autocomplete="off" required>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="pcosto" name="costo" value=<?php echo $pcosto; ?> autocomplete="off" required>
   </div>
   <div class="form-group">
   </div>

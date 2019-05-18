@@ -75,7 +75,8 @@
                       echo "<td>".$row['cantprod']."</td>";
                       echo "<td>$".$row['pcosto']."</td>
                       <td><a href='form_update.php?id=".$row['item']."&cod=".$row['codprod']."&nom=".$row['nomprod']."&cant=".$row['cantprod']."'><img src='icons/edit_icon.png' width='20'></a> 
-                      <a href='delete.php?id=".$row['item']."&cod=".$row['codprod']."'><img src='icons/delecte_icon.png' width='20'></a></td></tr>";
+                      <a href='delete.php?id=".$row['item']."&cod=".$row['codprod']."'><img src='icons/delecte_icon.png' width='20'></a></td>
+                      <td><a href='#'><img src='icons/lupa_icon.png' width='20'></a></td></tr>";
                       $n++;
                   }
               }else{

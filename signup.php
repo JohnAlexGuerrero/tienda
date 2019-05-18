@@ -37,7 +37,7 @@
       
 ?>
 
-<div class="container col-sm-6">
+<div class="container col-sm-4">
   <h2>Sign Up</h2>
   <p>Formulario de registro de usuarios</p>
   <form action="uregister.php" method="post" class="was-validated" enctype="multipart/form-data">
@@ -50,6 +50,12 @@
     <div class="form-group">
       <label for="uname">Lastname:</label>
       <input type="text" class="form-control" id="ulastname" placeholder="Enter Lastname" name="ulastname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="uname">Nro. cédula:</label>
+      <input type="text" class="form-control" id="uemail" placeholder="Nro. cédula" name="ucedula" required>
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>

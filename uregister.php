@@ -4,6 +4,7 @@
 
     $firstname=$_POST['uname'];
     $lastname=$_POST['ulastname'];
+    $cedula=$_POST['ucedula'];
     $email=$_POST['uemail'];
     $pass_1=$_POST['pswd'];
     $pass_2=$_POST['pswd2'];
@@ -11,17 +12,17 @@
     $type_photo=$_FILES['photo']['type'];
     $size_photo=$_FILES['photo']['size'];
     
-    move_uploaded_file($_FILES['photo']['tmp_name'],"photos/".$name_photo=$_FILES['photo']['name']);
-
-    $ruta="photos/".$name_photo;
+    echo $cedula.".".$type_photo;
+    move_uploaded_file($_FILES['photo']['tmp_name'],"photos/".$name_photo);
     /*
-    if (empty($photo)) {
-        $user_image="images/user_default.png";
+    if (empty($name_photo) && empty($type_photo) && empty($size_photo)) {
+        $ruta="images/user_default.png";
     }else {
-        $user_image=$photo;
-    }*/
+        move_uploaded_file($_FILES['photo']['tmp_name'],"photos/".$cedula.".");
+        $ruta="photos/".$cedula;
+    }
     
-
+    
     if (strcmp($pass_1,$pass_2)==0) {
         $pswd=password_hash($_POST['pswd'],PASSWORD_DEFAULT);
 
@@ -52,5 +53,5 @@
     
     
     
-
+*/
 ?>
