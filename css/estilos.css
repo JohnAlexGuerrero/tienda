@@ -1,0 +1,18 @@
+#box{
+    width: 300px;
+    border: 1px solid lightgray;
+    padding: 50px;
+    margin: 20px;
+}
+
+.fondo{
+    background-color: 
+}
+
+.box-container{
+    width: 800px;
+    border: 1px solid lightblue;
+    padding: 5px;
+    margin:30px;
+    left: 600px;
+}

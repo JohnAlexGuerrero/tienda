@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Tienda</title>
+  <title>SAIH</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <meta http-equiv="REFRESH" content="20; URL=index.php">
+  <link rel="stylesheet" href="../css/estilos.css">
+
 </head>
-<body>
+<body class="">
 
 <?php  
 
@@ -40,20 +43,18 @@
 ?>
 <br>
 <div class="container col-sm-4">
-  <h2>Login</h2>
+  <h2 class="text-center" rgcolor="blue">SAIH</h2>
+  <p>Por favor Iniciar Sección</p>
   <form action="validation-user.php" method="post">
     <div class="form-group">
-      <label for="email">Username:</label>
-      <input type="email" class="form-control" id="" autocompleted="off" placeholder="Enter email" name="email">
+      <input type="email" class="form-control" id="" autocompleted="off" placeholder="Numero de cédula" name="email">
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <input type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
     </div>
 
     <button type="submit" class="btn btn-primary">Ingresar</button>
     <br>
-    <a href="signup.php">Sign up</a>
   </form>
 </div>
 

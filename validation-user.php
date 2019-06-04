@@ -2,11 +2,11 @@
 
     require_once "database.php";
 
-    $useremail = $_POST['email'];
+    $iduser = $_POST['iduser'];
     $userpasswd = $_POST['pswd'];
 
 
-        $sql_validation ="SELECT * FROM usuarios WHERE email='$useremail' ";
+        $sql_validation ="SELECT * FROM usuarios WHERE usuario='$iduser' ";
         $result=$conn->query($sql_validation);
     
 
