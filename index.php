@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <meta http-equiv="REFRESH" content="20; URL=index.php">
-  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="css/estilos.css">
 
 </head>
 <body class="">
@@ -42,12 +42,21 @@
       
 ?>
 <br>
-<div class="container col-sm-4">
-  <h2 class="text-center" rgcolor="blue">SAIH</h2>
-  <p>Por favor Iniciar Sección</p>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="container">
+      <img src="images/01.jpg" alt="" width="190%">
+    </div>
+  </div>
+  <div class="col-sm-6">
+
+  <div class="container col-sm-5">
+  <h2 class="text-center NormalBold">SAIH</h2>
+  <p class="LetraSubtitulo">Por favor Iniciar Sección</p>
   <form action="validation-user.php" method="post">
     <div class="form-group">
-      <input type="email" class="form-control" id="" autocompleted="off" placeholder="Numero de cédula" name="email">
+      <input type="text" class="form-control" id="" autocompleted="off" placeholder="Numero de cédula" name="iduser">
     </div>
     <div class="form-group">
       <input type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
@@ -57,6 +66,9 @@
     <br>
   </form>
 </div>
+  </div>
+</div>
+
 
 </body>
 </html>

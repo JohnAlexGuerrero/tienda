@@ -7,10 +7,10 @@ $password = "";
 $database = "saih";
 
 
-$mysqli = new mysqli($server, $username, $password, $database);
+$conn = new mysqli($server, $username, $password, $database);
 
 
-if ($mysqli->connect_error) {
-    die('error'.$mysqli->connect_error);
+if ($conn->connect_error) {
+    die('error'.$conn->connect_error);
 }
 ?>

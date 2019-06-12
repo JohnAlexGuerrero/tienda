@@ -54,6 +54,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
+                    <th>#</th>
                     <th>Cédula</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
@@ -62,34 +63,32 @@
                 </tr>
                 </thead>
                 <tbody id="myTable">
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                    <td>HU23423</td>
-                    <td><a href=""><img src="../../images/modificar-icon.png" alt="" width="20"></a></td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@mail.com</td>
-                    <td>HU23423</td>
-                    <td><a href=""><img src="../../images/modificar-icon.png" alt="" width="20"></a></td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@greatstuff.com</td>
-                    <td>HU23423</td>
-                    <td><a href=""><img src="../../images/modificar-icon.png" alt="" width="20"></a></td>
-                </tr>
-                <tr>
-                    <td>Anja</td>
-                    <td>Ravendale</td>
-                    <td>a_r@test.com</td>
-                    <td>HU23423</td>
-                    <td><a href=""><img src="../../images/modificar-icon.png" alt="" width="20"></a></td>
-                </tr>
+                <?php
+            include "../../databases/db.php";
+            $n=1;
+              $sql="SELECT * FROM pacientes";
+              $result=$conn->query($sql);
+
+              if($result->num_rows > 0){
+                  while ($row = $result->fetch_assoc()) {
+                    echo "<tr><td>".$n."</td>";
+                      echo "<td>".$row['firstname']."</td>";
+                      echo "<td>".$row['lastname']."</td>";
+                      echo "<td>".$row['email']."</td>";
+                      echo "<td><img src='".$row['photo']."' width='40'></td>
+                      <td><a href='form_update.php?id='><img src='icons/edit_icon.png' width='20'></a> 
+                      <a href='delete.php?id='><img src='icons/delecte_icon.png' width='20'></a></td>
+                      <td><a href=''><img src='../../images/modificar-icon.png' alt='' width='20'></a></td></tr>";
+                      $n++;
+                  }
+              }else{
+                  echo "<div class=alert alert-success>
+                  <strong>!no hay pacientes registrados!.</strong> 
+              </div>";
+              }
+              
+      ?>                
+               
                 </tbody>
             </table>
         </div>

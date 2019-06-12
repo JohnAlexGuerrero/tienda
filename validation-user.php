@@ -1,20 +1,33 @@
 <?php
 
-    require_once "database.php";
+    require_once "databases/db.php";
 
     $iduser = $_POST['iduser'];
-    $userpasswd = $_POST['pswd'];
+    $userpasswd =md5($_POST['pswd']) ;
 
 
-        $sql_validation ="SELECT * FROM usuarios WHERE usuario='$iduser' ";
+        $sql_validation ="SELECT * FROM usuarios WHERE usuario='$iduser' and password='$userpasswd' ";
         $result=$conn->query($sql_validation);
     
 
 	    if ($result->num_rows > 0) {
             
             $data  = $result->fetch_assoc();
-            echo "<h1>".$data['email']."</h1>";
-            $hash=$data['password'];
+            session_start();
+
+		$_SESSION['id_user']   = $data['id_user'];
+
+		$_SESSION['username']  = $data['username'];
+
+		$_SESSION['password']  = $data['password'];
+
+		$_SESSION['name_user'] = $data['name_user'];
+
+		$_SESSION['permisos_acceso'] = $data['permisos_acceso'];
+
+	
+		header("Location: main.php?module=start");
+	
                 
                 if (password_verify($userpasswd, $hash)) {
                     header("refresh:0;url=main.php");
